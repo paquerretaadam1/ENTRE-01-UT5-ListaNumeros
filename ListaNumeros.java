@@ -169,8 +169,8 @@ public class ListaNumeros
         int[] copia = new int[pos];
         int posCopia = 0;
         for(int i = n; i <= pos; i += n){
-            for(int j = i - 1 ; j >= i - n; j--){
-                copia[posCopia] = lista[j];
+            for(int j = i - 1 ; j >= i - n; j--){ //copiar los valores de un intervalo de final al principio
+                copia[posCopia] = lista[j];          
                 posCopia++;
             }
         }
@@ -188,10 +188,10 @@ public class ListaNumeros
         for(int f = 0; f < pos; f++){
             array2D[f] = new int[f + 1];
             array2D[f][0] = 1;
-            for(int c = 1; c < array2D[f].length - 1; c++){
+            for(int c = 1; c < f; c++){
                 array2D[f][c] = array2D[f - 1][c] + array2D[f - 1][c - 1];
             }
-            array2D[f][array2D[f].length - 1] = 1;
+            array2D[f][f] = 1;
         }
         return array2D;
     }
