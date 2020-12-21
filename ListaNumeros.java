@@ -138,7 +138,7 @@ public class ListaNumeros
      * 
      */
     public int buscarBinario(int numero) {
-        int[] copia = Arrays.copyOf(lista, 0);
+        int[] copia = Arrays.copyOf(lista, pos);
         Arrays.sort(copia);
         int index = Arrays.binarySearch(copia, numero);
         if(index < 0){
@@ -168,7 +168,7 @@ public class ListaNumeros
     public void invertir(int n) {
         int[] copia = new int[pos];
         int posCopia = 0;
-        for(int i = n; i < pos; i += n){
+        for(int i = n; i <= pos; i += n){
             for(int j = i - 1 ; j >= i - n; j--){
                 copia[posCopia] = lista[j];
                 posCopia++;
